@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PayCtions</string>
+    <string name="login_user">USUÁRIO</string>
+    <string name="login_password">Senha</string>
+    <string name="login_btnLogin">Efetuar login</string>
+    <string name="login_inCaseYouDontHaveAAccount">Se não possuir um login de acesso contate um responsável.</string>
+</resources>
