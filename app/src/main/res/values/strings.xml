@@ -1,7 +1,16 @@
 <resources>
     <string name="app_name">PayCtions</string>
     <string name="login_user">USUÁRIO</string>
-    <string name="login_password">Senha</string>
+    <string name="login_password">SENHA</string>
     <string name="login_btnLogin">Efetuar login</string>
-    <string name="login_inCaseYouDontHaveAAccount">Se não possuir um login de acesso contate um responsável.</string>
+    <string name="login_inCaseYouDontHaveAAccount">Se não possuir um login de acesso\n contate um responsável.</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="home_welcome">Bem-vindo,</string>
+    <string name="home_user_name">Username</string>
+    <string name="home_user_role">Cargo: %s</string>
+    <string name="home_user_since">Desde: %s</string>
+    <string name="home_user_id">ID: %d</string>
 </resources>
