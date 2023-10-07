@@ -1,9 +1,11 @@
-package com.unip.pim.payctions;
+package com.unip.pim.payctions.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import com.unip.pim.payctions.R;
 
 public class MainActivity extends AppCompatActivity {
 
