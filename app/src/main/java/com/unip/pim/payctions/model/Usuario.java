@@ -1,10 +1,16 @@
 package com.unip.pim.payctions.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Usuario {
 
+    public static final String USUARIO = "usuario";
     public static final String LOGIN = "login";
     public static final String CD_USUARIO = "cdUsuario";
     public static final String SENHA = "senha";
@@ -16,14 +22,13 @@ public class Usuario {
     private String senha;
     private Character perfil;
     private Integer cdFuncionario;
-
     private Funcionario funcionario;
     public static List<Usuario> usuarioList;
 
     static {
         usuarioList = new ArrayList<>();
         usuarioList.add(new Usuario(1, "miMaster", "1234", 'M', 1));
-        usuarioList.add(new Usuario(2, "miOpe", "1234", 'O', 1));
+        usuarioList.add(new Usuario(2, "miAdm", "1234", 'A', 1));
         usuarioList.add(new Usuario(3, "jessiOpe", "1234", 'O', 2));
     }
 
@@ -43,6 +48,19 @@ public class Usuario {
         Usuario result = null;
         for (Usuario usuario : usuarioList) {
             if (usuario.login.equals(login) && usuario.senha.equals(senha)) {
+                result = usuario;
+                result.senha = null;
+                break;
+            }
+        }
+
+        return result;
+    }
+
+    public static Usuario buscaUsuarioPorCd(Integer cdUsuario) {
+        Usuario result = null;
+        for (Usuario usuario : usuarioList) {
+            if (usuario.cdUsuario.equals(cdUsuario)) {
                 result = usuario;
                 result.senha = null;
                 break;

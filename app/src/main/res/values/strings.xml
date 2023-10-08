@@ -10,8 +10,16 @@
     <string name="title_notifications">Notifications</string>
     <string name="home_welcome">Bem-vindo,</string>
     <string name="home_user_name">Username</string>
+    <string name="home_home">Home</string>
+    <string name="home_historico_pagamento">Histórico de\n pagamento</string>
     <string name="home_user_role">Cargo: %s</string>
     <string name="home_user_since">Desde: %s</string>
+    <string name="home_btn_incluir_func">Incluir\n colaborador</string>
+    <string name="home_btn_buscar_alterar_func">Buscar/Alterar \nfuncionário</string>
+    <string name="home_btn_holerite">Holerite</string>
+    <string name="home_btn_ponto">Ponto eletrônico</string>
+    <string name="home_btn_justificar">Justificar faltas/requisitar férias</string>
+
     <string name="home_user_id">ID: %d</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

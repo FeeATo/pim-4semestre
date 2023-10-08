@@ -41,10 +41,7 @@ public class LoginActivity extends AppCompatActivity {
                 Usuario usuario = null;
                 if ((usuario = Usuario.validaSenha(edtLogin.getText().toString(), edtSenha.getText().toString())) != null) {
                     Intent intent = new Intent(context, HomeActivity.class);
-                    intent.putExtra("login", usuario.getLogin());
-                    intent.putExtra("nome", usuario.getFuncionario().getNome());
-                    intent.putExtra("cdFuncionario", usuario.getCdFuncionario());
-                    intent.putExtra("dtContratacao", new Date());
+                    intent.putExtra(Usuario.CD_USUARIO, usuario.getCdUsuario());
 
                     startActivity(intent);
                 } else {

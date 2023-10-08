@@ -1,5 +1,10 @@
 package com.unip.pim.payctions.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 import com.unip.pim.payctions.utils.Utils;
 
 import java.math.BigInteger;
@@ -8,6 +13,21 @@ import java.util.Date;
 import java.util.List;
 
 public class Funcionario {
+
+    public static final String CD_FUNCIONARIO = "cdFuncionario";
+    public static final String NOME = "nome";
+    public static final String SOBRENOME = "sobrenome";
+    public static final String CPF = "cpf";
+    public static final String EMAIL = "email";
+    public static final String DT_NASCIMENTO = "dtNascimento";
+    public static final String REGISTRO_PROF = "registroProf";
+    public static final String CNH = "cnh";
+    public static final String CD_ENDERECO = "cdEndereco";
+    public static final String CD_SETOR = "cdSetor";
+    public static final String CD_CARGO = "cdCargo";
+    public static final String IMG_PATH = "imgPath";
+    public static final String DT_CONTRATACAO = "dtContratacao";
+    public static final String CARGO = "cargo";
 
     private Integer cdFuncionario;
     private String nome;
@@ -23,7 +43,6 @@ public class Funcionario {
     private Integer cdCargo;
     private String imgPath;
     private Date dtContratacao;
-
     private Cargo cargo;
     public static List<Funcionario> funcionarioList;
 
@@ -61,6 +80,10 @@ public class Funcionario {
     }
 
     public Funcionario() {
+    }
+
+    public Funcionario(Parcel parcel) {
+
     }
 
     public Funcionario(Integer cdFuncionario,
