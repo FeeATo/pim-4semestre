@@ -11,6 +11,7 @@
     <string name="home_welcome">Bem-vindo,</string>
     <string name="home_user_name">Username</string>
     <string name="home_home">Home</string>
+    <string name="home_solicitacoes">Estado de solicitações</string>
     <string name="home_historico_pagamento">Histórico de\n pagamento</string>
     <string name="home_user_role">Cargo: %s</string>
     <string name="home_user_since">Desde: %s</string>

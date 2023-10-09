@@ -2,12 +2,16 @@ package com.unip.pim.payctions.utils;
 
 import com.unip.pim.payctions.exception.PayctionsException;
 
+import com.unip.pim.payctions.R;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
 public class Utils {
+
+    public static final int COR_MENU_ATIVO = R.color.black_ativo;
+    public static final int COR_MENU_INATIVO = R.color.gray_inativo;
 
     private Utils() {
     }
