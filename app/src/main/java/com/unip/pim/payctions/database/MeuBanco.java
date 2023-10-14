@@ -1,4 +1,4 @@
-package com.unip.pim.payctions.activity.database;
+package com.unip.pim.payctions.database;
 
 import java.sql.Connection;
 

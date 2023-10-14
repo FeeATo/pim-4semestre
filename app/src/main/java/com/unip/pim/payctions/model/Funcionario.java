@@ -12,17 +12,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Funcionario {
+public class Funcionario extends Pessoa {
 
     public static final String CD_FUNCIONARIO = "cdFuncionario";
-    public static final String NOME = "nome";
-    public static final String SOBRENOME = "sobrenome";
-    public static final String CPF = "cpf";
     public static final String EMAIL = "email";
-    public static final String DT_NASCIMENTO = "dtNascimento";
     public static final String REGISTRO_PROF = "registroProf";
     public static final String CNH = "cnh";
-    public static final String CD_ENDERECO = "cdEndereco";
     public static final String CD_SETOR = "cdSetor";
     public static final String CD_CARGO = "cdCargo";
     public static final String IMG_PATH = "imgPath";
@@ -30,15 +25,10 @@ public class Funcionario {
     public static final String CARGO = "cargo";
 
     private Integer cdFuncionario;
-    private String nome;
-    private String sobrenome;
-    private String cpf;
     private String email;
     private Long telefone;
-    private Date dtNascimento;
     private String registroProf;
     private String cnh;
-    private Integer cdEndereco;
     private Integer cdSetor;
     private Integer cdCargo;
     private String imgPath;
@@ -63,7 +53,7 @@ public class Funcionario {
                 1,
                 1));
 
-        funcionarioList.add(new Funcionario(1,
+        funcionarioList.add(new Funcionario(2,
                 "Jessica",
                 "Reis",
                 "54785633398",
@@ -75,6 +65,21 @@ public class Funcionario {
                 Utils.toDate("2022-12-05", "yyyy-MM-dd"),
                 "imgPath/Jessica",
                 2,
+                2,
+                2));
+
+        funcionarioList.add(new Funcionario(3,
+                "Fernando",
+                "Joaquiles",
+                "21022547936",
+                "joaquiles@email.com",
+                987458587L,
+                Utils.toDate("1995-05-08", "yyyy-MM-dd"),
+                "4521",
+                null,
+                Utils.toDate("2022-12-05", "yyyy-MM-dd"),
+                "imgPath/Fernando",
+                3,
                 2,
                 2));
     }
@@ -135,30 +140,6 @@ public class Funcionario {
         this.cdFuncionario = cdFuncionario;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -175,14 +156,6 @@ public class Funcionario {
         this.telefone = telefone;
     }
 
-    public Date getDtNascimento() {
-        return dtNascimento;
-    }
-
-    public void setDtNascimento(Date dtNascimento) {
-        this.dtNascimento = dtNascimento;
-    }
-
     public String getRegistroProf() {
         return registroProf;
     }
@@ -197,14 +170,6 @@ public class Funcionario {
 
     public void setCnh(String cnh) {
         this.cnh = cnh;
-    }
-
-    public Integer getCdEndereco() {
-        return cdEndereco;
-    }
-
-    public void setCdEndereco(Integer cdEndereco) {
-        this.cdEndereco = cdEndereco;
     }
 
     public Integer getCdSetor() {
@@ -227,19 +192,26 @@ public class Funcionario {
         return imgPath;
     }
 
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
     public Date getDtContratacao() {
         return dtContratacao;
     }
 
-    public static List<Funcionario> getFuncionarioList() {
-        return funcionarioList;
+    public void setDtContratacao(Date dtContratacao) {
+        this.dtContratacao = dtContratacao;
     }
 
     public Cargo getCargo() {
-        if (this.cargo == null) {
-            this.cargo = Cargo.getCargoByCdCargo(this.cdCargo);
+        if (cargo==null) {
+            cargo = Cargo.getCargoByCdCargo(cdCargo);
         }
-        return this.cargo;
+        return cargo;
     }
 
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
+    }
 }

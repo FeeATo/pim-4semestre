@@ -7,4 +7,5 @@
     <color name="whiteTransparent">#B3FFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="orange">#D27C2C</color>
+    <color name="solicitacaoBox">#B31E1E1E</color>
 </resources>

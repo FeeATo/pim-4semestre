@@ -14,7 +14,8 @@ public class Cargo {
 
     static {
         cargoList = new ArrayList<>();
-        cargoList.add(new Cargo(1, 40, "Programador", 1234.56));
+        cargoList.add(new Cargo(1, 40, "Chefe de RH", 10234.56));
+        cargoList.add(new Cargo(2, 40, "Programador", 1234.56));
     }
 
     public Cargo() {

@@ -3,6 +3,7 @@ package com.unip.pim.payctions.utils;
 import com.unip.pim.payctions.exception.PayctionsException;
 
 import com.unip.pim.payctions.R;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -45,8 +46,7 @@ public class Utils {
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(date);
 
-            calendar.add(dias, Calendar.DAY_OF_MONTH);
-
+            calendar.add(Calendar.DAY_OF_MONTH, dias);
             result = calendar.getTime();
         } catch (Exception ex) {
 //            throw new PayctionsException("Erro ao adicionar dias", "addDias", Utils.class, ex);
