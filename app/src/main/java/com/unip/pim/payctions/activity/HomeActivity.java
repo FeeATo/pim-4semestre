@@ -8,20 +8,17 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.unip.pim.payctions.R;
+import com.unip.pim.payctions.fragment.BemVindoUsuarioFragment;
 import com.unip.pim.payctions.fragment.HomeMasterEstadoSolicitacoesFragment;
 import com.unip.pim.payctions.fragment.HomeMasterMenuFragment;
 import com.unip.pim.payctions.fragment.HomeRhEMasterHomeBotoesFragment;
 import com.unip.pim.payctions.fragment.HomeRhMenuFragment;
 import com.unip.pim.payctions.interfaces.fragment.FragmentActionListener;
 import com.unip.pim.payctions.model.Usuario;
-import com.unip.pim.payctions.utils.Utils;
 
 public class HomeActivity extends AppCompatActivity implements FragmentActionListener {
 
     Usuario usuario;
-
-    TextView txtUsuario, txtCargo, txtDesde, txtCdFuncionario;
-
     FragmentTransaction fragmentTransaction = null;
     FragmentManager fragmentManager = null;
 
@@ -31,27 +28,23 @@ public class HomeActivity extends AppCompatActivity implements FragmentActionLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        inicializaCampos();
-
         Bundle bundle = getIntent().getExtras();
-
         usuario = Usuario.buscaUsuarioPorCd((Integer) bundle.get(Usuario.CD_USUARIO));
-
         fragmentManager = getSupportFragmentManager();
 
-        preencheTextosComUsuario(usuario);
         carregaFragmentosDoUsuario(usuario);
     }
 
     private void carregaFragmentosDoUsuario(Usuario usuario) {
-
         fragmentTransaction = fragmentManager.beginTransaction();
+        Bundle bundleUsuario = new Bundle();
+        bundleUsuario.putInt(Usuario.CD_USUARIO, usuario.getCdUsuario());
+        fragmentTransaction.add(R.id.flInformacoesUsuario, BemVindoUsuarioFragment.class, bundleUsuario);
 
         Character tipoPerfil = usuario.getPerfil();
         if (tipoPerfil.equals('A')) {
             fragmentTransaction.add(R.id.flMenu, HomeRhMenuFragment.class, null);
             fragmentTransaction.add(R.id.flPrincipal, HomeRhEMasterHomeBotoesFragment.class, null);
-
         } else if (tipoPerfil.equals('O')) {
 
         } else if(tipoPerfil.equals('M')) {
@@ -64,24 +57,9 @@ public class HomeActivity extends AppCompatActivity implements FragmentActionLis
 
             fragmentTransaction.add(R.id.flMenu, homeMasterMenuFragment);
             fragmentTransaction.add(R.id.flPrincipal, HomeRhEMasterHomeBotoesFragment.class, null);
-
         }
 
         fragmentTransaction.commit();
-    }
-
-    private void preencheTextosComUsuario(Usuario usuario) {
-        txtDesde.setText(String.format(getResources().getString(R.string.home_user_since), Utils.formatData(usuario.getFuncionario().getDtContratacao(), "dd/MM/yyyy")));
-        txtCdFuncionario.setText(String.format(getResources().getString(R.string.home_user_id), usuario.getFuncionario().getCdFuncionario()));
-        txtCargo.setText(String.format(getResources().getString(R.string.home_user_role), usuario.getFuncionario().getCargo().getNomeCargo()));
-        txtUsuario.setText(usuario.getFuncionario().getNome());
-    }
-
-    private void inicializaCampos(){
-        txtUsuario = findViewById(R.id.txtNome_menu);
-        txtCargo = findViewById(R.id.txtCargo_menu);
-        txtDesde = findViewById(R.id.txtDesde_menu);
-        txtCdFuncionario = findViewById(R.id.txtCdFuncionario_menu);
     }
 
     @Override

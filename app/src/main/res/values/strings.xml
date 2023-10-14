@@ -26,4 +26,9 @@
     <string name="solicitacoes_list_item_nome">Nome:</string>
     <string name="solicitacoes_list_item_responsavel">Responsável:</string>
     <string name="solicitacoes_list_item_registro">Registro:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="justifique_faltas">Justifique o motivo das suas faltas</string>
+    <string name="anexar_documento_comprovar_falta">Anexar documento para\n comprovação da justificativa da falta</string>
+    <string name="confirmar_falta"><u>Confirmar</u></string>
 </resources>
