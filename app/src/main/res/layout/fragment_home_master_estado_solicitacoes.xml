@@ -6,9 +6,17 @@
     tools:context=".fragment.HomeMasterEstadoSolicitacoesFragment">
 
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/solicitacoes_master_cacto"
+        android:scaleType="centerCrop"
+        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:padding="24dp"
         android:orientation="vertical">
 
         <TextView

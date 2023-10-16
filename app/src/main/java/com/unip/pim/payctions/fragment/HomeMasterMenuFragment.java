@@ -15,6 +15,9 @@ import com.unip.pim.payctions.R;
 import com.unip.pim.payctions.interfaces.fragment.FragmentActionListener;
 import com.unip.pim.payctions.utils.Utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link HomeMasterMenuFragment#newInstance} factory method to
@@ -24,8 +27,17 @@ public class HomeMasterMenuFragment extends Fragment {
 
     LinearLayout btnHome, btnEstadoSolicitacoes, btnHistoricoPagamento;
     TextView txtHome, txtEstadoSolicitacoes, txtHistoricoPagamento;
-
+    int opcaoAtiva;
     FragmentActionListener fragmentActionListener;
+
+    public static List<Integer> sequenciaMenus;
+
+    static {
+        sequenciaMenus = new ArrayList<>();
+        sequenciaMenus.add(R.id.home_llHome);
+        sequenciaMenus.add(R.id.home_llEstadoSolicitacoes);
+        sequenciaMenus.add(R.id.home_llHistoricoPagamentos);
+    }
 
     public void setMenuFragmentActionListener(FragmentActionListener fragmentActionListener) {
         this.fragmentActionListener = fragmentActionListener;
@@ -59,56 +71,46 @@ public class HomeMasterMenuFragment extends Fragment {
 
         mudaBotaoAtivo(getArguments().getInt(FragmentActionListener.opcaoSelecionada));
 
-        btnHome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (fragmentActionListener != null) {
-                    Bundle bundle = new Bundle();
-                    bundle.putInt(FragmentActionListener.opcaoSelecionada, R.id.home_llHome);
-
-                    fragmentActionListener.onMenuSelected(bundle);
-                }
-            }
-        });
-        btnHistoricoPagamento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (fragmentActionListener != null) {
-                    Bundle bundle = new Bundle();
-                    bundle.putInt(FragmentActionListener.opcaoSelecionada, R.id.home_llHistoricoPagamentos);
-
-                    fragmentActionListener.onMenuSelected(bundle);
-                }
-            }
-        });
-        btnEstadoSolicitacoes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (fragmentActionListener != null) {
-                    Bundle bundle = new Bundle();
-                    bundle.putInt(FragmentActionListener.opcaoSelecionada, R.id.home_llEstadoSolicitacoes);
-
-                    fragmentActionListener.onMenuSelected(bundle);
-                }
-            }
-        });
+        btnHome.setOnClickListener(onClickListenerSetMenuSelected(R.id.home_llHome));
+        btnHistoricoPagamento.setOnClickListener(onClickListenerSetMenuSelected(R.id.home_llHistoricoPagamentos));
+        btnEstadoSolicitacoes.setOnClickListener(onClickListenerSetMenuSelected(R.id.home_llEstadoSolicitacoes));
 
         return view;
     }
+
+    private View.OnClickListener onClickListenerSetMenuSelected(int opcaoSelecionada) {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("fui clicado");
+                if (fragmentActionListener != null) {
+                    Bundle bundle = new Bundle();
+                    bundle.putInt(FragmentActionListener.opcaoSelecionada, opcaoSelecionada);
+                    bundle.putInt(FragmentActionListener.opcaoAtiva, opcaoAtiva);
+
+                    fragmentActionListener.onMenuSelected(bundle);
+                }
+            }
+        };
+    }
+
 
     public void mudaBotaoAtivo(int layout) {
         if (layout == R.id.home_llHome) {
             alteraHomeImg(true);
             alteraHistoricoPagamentoImg(false);
             alteraEstadoSolicitacoesImg(false);
+            opcaoAtiva = R.id.home_llHome;
         } else if (layout == R.id.home_llEstadoSolicitacoes) {
             alteraHomeImg(false);
             alteraHistoricoPagamentoImg(false);
             alteraEstadoSolicitacoesImg(true);
+            opcaoAtiva = R.id.home_llEstadoSolicitacoes;
         } else if (layout == R.id.home_llHistoricoPagamentos) {
             alteraHomeImg(false);
             alteraHistoricoPagamentoImg(true);
             alteraEstadoSolicitacoesImg(false);
+            opcaoAtiva = R.id.home_llHistoricoPagamentos;
         }
     }
 

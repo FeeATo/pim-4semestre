@@ -8,7 +8,7 @@
         android:layout_width="0dp"
         android:layout_height="115dp"
         android:layout_weight="7"
-        android:background="@drawable/round_15dp_solicitacoes_box"
+        android:background="@drawable/round_5dp_solicitacoes_box"
         android:padding="10dp">
 
         <LinearLayout

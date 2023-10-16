@@ -4,8 +4,11 @@
     <color name="black_ativo">#FF000000</color>
     <color name="gray_inativo">#292D32</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="whiteTransparent">#B3FFFFFF</color>
+    <color name="whiteTransparent">#CCFFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="orange">#D27C2C</color>
     <color name="solicitacaoBox">#B31E1E1E</color>
+    <color name="cactusBackground">#EEE2E4</color>
+    <color name="botoesColor">#efebea</color>
+    <color name="motivoFaltaTextbox">#F1F0FF</color>
 </resources>

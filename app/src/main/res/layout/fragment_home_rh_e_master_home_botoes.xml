@@ -4,7 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.HomeRhEMasterHomeBotoesFragment">
+    tools:context=".fragment.HomeRhEMasterHomeBotoesFragment"
+    android:padding="24dp"
+    android:background="@color/botoesColor">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/menu_principal"
+        android:scaleType="fitStart"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -21,7 +29,6 @@
             android:id="@+id/textView5"
             android:layout_width="0dp"
             android:layout_height="90dp"
-            android:layout_marginTop="50dp"
             android:layout_marginEnd="15dp"
             android:background="@drawable/round_15dp_whitetransparent_border_orange"
             android:text="@string/home_btn_incluir_func"
@@ -50,7 +57,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/homeBotoesFragment_btnJustificarFalta"
             android:layout_width="0dp"
             android:layout_height="90dp"
             android:layout_marginTop="25dp"
@@ -70,7 +77,6 @@
             android:layout_width="0dp"
             android:layout_height="90dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="50dp"
             android:gravity="center"
             android:textSize="15dp"
             android:background="@drawable/round_15dp_whitetransparent_border_orange"

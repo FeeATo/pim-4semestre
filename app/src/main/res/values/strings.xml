@@ -31,4 +31,5 @@
     <string name="justifique_faltas">Justifique o motivo das suas faltas</string>
     <string name="anexar_documento_comprovar_falta">Anexar documento para\n comprovação da justificativa da falta</string>
     <string name="confirmar_falta"><u>Confirmar</u></string>
+    <string name="hint_cadastro_colaborador_nome">Digite o nome do colaborador</string>
 </resources>
